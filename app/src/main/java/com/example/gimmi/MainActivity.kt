@@ -8,6 +8,7 @@ import android.widget.*
 import android.content.Intent
 import android.content.Context
 import android.content.pm.PackageManager
+import android.view.animation.AnimationUtils
 import net.objecthunter.exp4j.ExpressionBuilder
 import java.lang.Exception
 
@@ -89,4 +90,10 @@ class MainActivity : AppCompatActivity() {
             requestPermissions(arrayOf(android.Manifest.permission.CALL_PHONE), 1)
         }
     }
+
+    private fun showResponse(response: String) {
+        tvResponse.text = response
+        tvResponse.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_in))
+    }
+
 }
